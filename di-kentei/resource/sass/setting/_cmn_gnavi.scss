@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+// _cmn_gnavi.scss
+
+/* ==========================================================
+!Gnavi
+========================================================== */
+#gnavi {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	top: 0;
+	right: 1px;
+	width: 60px;
+	height: 60px;
+	background: trasnparent none;
+
+	&:hover,
+	&:active,
+	&:focus {
+		cursor: pointer;
+		outline: 1px dotted $c_white;
+	}
+	&.on,
+	&.on:hover,
+	&.on:active,
+	&.on:focus {
+		background: trasnparent none;
+		cursor: pointer;
+		outline: 1px dotted $c_white;
+	}
+
+	// Menu
+	// ------------------------------------ */
+	> ul {
+		.menu_trigger {
+			position: relative;
+			z-index: 1000;
+			width: 31px;
+			height: 36px;
+
+			// Menu Line
+			// ------------------------------------ */
+			/* Menu Line top */
+			&:before {
+				display: block;
+				align-self: center;
+				position: absolute;
+				top: 2px; /* 線の位置 */
+				left: 0;
+				width: 100%;
+				height: 2px;
+				text-align: center;
+				content: "";
+				background-color: $c_white; /* 線の色 */
+				transition-property: transform;
+				transition-duration: 0.15s;
+				transition-timing-function: ease-in-out;
+			}
+			/* Menu Line middle */
+			& .menu_trigger_line {
+				display: block;
+				align-self: center;
+				position: absolute;
+				top: 10px; /* 線の位置 */
+				left: 0;
+				width: 100%;
+				height: 2px;
+				color: $c_white;
+				font-size: 10px;
+				line-height: 42px; /* 文字の位置 */
+				text-align: center;
+				background-color: $c_white; /* 線の色 */
+				transition: all 0.4s;
+			}
+			/* Menu Line bottom */
+			&:after {
+				display: block;
+				align-self: center;
+				position: absolute;
+				top: 18px; /* 線の位置 */
+				left: 0;
+				width: 100%;
+				height: 2px;
+				text-align: center;
+				content: "";
+				background-color: $c_white; /* 線の色 */
+				transition-property: transform;
+				transition-duration: 0.15s;
+				transition-timing-function: ease-in-out;
+			}
+
+			/* Menu Close Line
+			// ------------------------------------ */
+			/* Menu Close Line top */
+			&.active:before {
+				background-color: #ffffff; /* 線の色 */
+				transform: translateY(8px) rotate(-45deg);
+			}
+			/* Menu Close Line middle */
+			&.active .menu_trigger_line {
+				color: #ffffff; /* 文字の色 */
+				background-color: transparent; /* 線の色 無し */
+			}
+			/* Menu Close Line bottom */
+			&.active:after {
+				background-color: #ffffff; /* 線の色 */
+				transform: translateY(-8px) rotate(45deg);
+			}
+		}//.menu_trigger
+
+		/* Menu Link Common
+		------------------------------------ */
+		/* Link common default */
+		& > li:nth-of-type(2) {
+			display: block;
+			overflow: hidden;
+			visibility: hidden; /* 変更前 */
+			opacity: 0; /* 変更前 */
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 999;
+			width: 100%;
+			height: 100%; /* 変更前 */
+			padding: 0 6px 0 6px;
+			box-sizing: border-box;
+			box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+			/* fade slide */
+			transform: translateY(60px); /* 変更前 */
+			transition-property: overflow, visibility, height, opacity, transform; /* transitionを適用するCSSプロパティ名を指定 */
+			transition-duration: 0.3s; /* 0.3秒かけて */
+			transition-timing-function: ease-out; /* 変化の進行割合をイージングで指定 */
+
+			/* gnavi default */
+			> ul {
+				padding: 90px 8px 8px 8px;
+				background: rgba(133, 220, 227, 0.9) none;
+
+				> li {
+					margin: 0 0 8px 0;
+					border-width: 1px 1px 1px 1px;
+					border-style: solid;
+					border-color: $c_white;
+					text-align: center;
+
+					& > a {
+						display: block;
+						padding: 16px 16px 16px 16px;
+						text-decoration: none;
+						background: $c_white30 url(#{$path}ico_arrow01_white.svg) no-repeat right 10px top 50%;
+						background-size: 12px 24px;
+						transition-property: background-color; /* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+						/* fade */
+						transition-duration: 0.1s; /* 0.1秒かけて */
+
+						&:hover,
+						&:focus {
+							background: $c_white50 url(#{$path}ico_arrow01_white.svg) no-repeat right 10px top 50%; /* 変更後 */
+						}
+						span {
+							display: block;
+
+							@include fz(1.2);
+						}
+					}
+				}
+			}
+
+			/* others link default */
+			> ul:nth-of-type(2) {
+				padding: 8px 8px 8px 8px;
+
+				> li {
+					text-align: left;
+
+					& > a {
+						padding: 16px 16px 16px 40px;
+						background-color: $c_white30;
+						transition-property: background-color; /* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+						/* fade */
+						transition-duration: 0.1s; /* 0.1秒かけて */
+
+						&:hover,
+						&:focus {
+							background-color: $c_white50; /* 変更後 */
+						}
+					}
+					&#mail {
+						a {
+							background-image: url(#{$path}ico_free01.png), url(#{$path}ico_arrow01_white.svg);
+							background-repeat: no-repeat;
+							background-position: 8px 50%, right 10px top 50%;
+							background-size: 28px 28px, 12px 24px;
+						}
+					}
+					&#line {
+						a {
+							background-image: url(#{$path}ico_line01.png), url(#{$path}ico_arrow01_white.svg);
+							background-repeat: no-repeat;
+							background-repeat: no-repeat;
+							background-position: 8px 50%, right 10px top 50%;
+							background-size: 28px 28px, 12px 24px;
+						}
+					}
+				}
+			}
+		}//> li:nth-of-type(2)
+
+		/* Link common visible */
+		& > li.visible:nth-of-type(2) {
+			overflow: auto; /* 変更後 */
+			overflow-y: scroll; /* スマホ制御 */
+			visibility: visible; /* 変更後 */
+			opacity: 1; /* 変更後 */
+			height: 100%; /* 変更後 */
+			/* fade slide */
+			transform: translateY(0); /* 変更後 */
+			transition-property: overflow, visibility, height, opacity, transform; /* transitionを適用するCSSプロパティ名を指定 */
+			transition-duration: 0.3s; /* 0.3秒かけて */
+			transition-timing-function: ease-out; /* 変化の進行割合をイージングで指定 */
+		}//& > li.visible:nth-of-type(2)
+	}//ul
+}//#gnavi
+
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+//1200px以上（大きめPC）
+@include pc-large {
+	#gnavi {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		height: 80px;
+
+		&:hover,
+		&:active,
+		&:focus {
+			outline: none;
+		}
+		&.on,
+		&.on:hover,
+		&.on:active,
+		&.on:focus {
+			outline: none;
+		}
+
+		// Menu
+		// ------------------------------------ */
+		> ul {
+			width: 100%;
+
+			.menu_trigger {
+				display: none;
+			}//.menu_trigger
+
+			/* Menu Link Common
+		------------------------------------ */
+			/* Link common default */
+			& > li:nth-of-type(2) {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				overflow: hidden;
+				visibility: visible;
+				opacity: 1;
+				position: static;
+				height: 60px;
+				padding: 0 10px 0 6px;
+				box-shadow: none;
+				/* fade slide */
+				transform: none;
+
+				/* gnavi default */
+				> ul {
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-between;
+					align-items: center;
+					padding: 0 0 0 20px;
+					background: transparent;
+
+					> li {
+						display: inline-block;
+						margin: 0;
+						padding: 0 16px 0 16px;
+						border-width: 0;
+						white-space: nowrap;
+
+						& > a {
+							display: block;
+							position: relative;
+							padding: 0 0 2px 0;
+							background: transparent none;
+							cursor: pointer;
+							transition-property: background-color; /* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+							/* fade */
+							transition-duration: 0.1s; /* 0.1秒かけて */
+
+							@include fz(1.5);
+
+							&:hover,
+							&:focus {
+								background: transparent none;
+							}
+							span {
+								display: block;
+
+								@include fz(1.1);
+							}
+						}
+					}
+				}
+				/* gnavi first */
+				> ul:nth-of-type(1) {
+					flex-grow: 1;
+
+					> li {
+						& > a:before {
+							display: block;
+							position: absolute;
+							top: -3px;
+							left: 50%;
+							width: 0;
+							height: 1px;
+							content: "";
+							background: $c_white;
+							transform: translate(-50%, 0);
+							transition: 0.1s;
+						}
+						& > a:after {
+							display: block;
+							position: absolute;
+							bottom: -3px;
+							left: 50%;
+							width: 0;
+							height: 1px;
+							content: "";
+							background: $c_white;
+							transform: translate(-50%, 0);
+							transition: 0.1s;
+						}
+						& > a:hover:before,
+						& > a:hover:after {
+							width: 100%;
+						}
+					}
+				}
+				/* others link default */
+				> ul:nth-of-type(2) {
+					display: flex;
+					flex-flow: row nowrap;
+					justify-content: space-between;
+					align-items: flex-end;
+					padding: 0;
+
+					> li {
+						padding: 0 0 0 12px;
+						text-align: left;
+
+						& > a {
+							position: relative;
+							padding: 8px 24px 8px 40px;
+							border-width: 1px 1px 1px 1px;
+							border-style: solid;
+							border-color: $c_black;
+							background-color: transparent;
+							transition-property: background-color; /* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+							/* fade */
+							transition-duration: 0.1s; /* 0.1秒かけて */
+
+							&:hover,
+							&:focus {
+								background-color: $c_white50; /* 変更後 */
+							}
+						}
+						&#mail {
+							a {
+								background-image: url(#{$path}ico_free01.png), url(#{$path}ico_arrow01_black.svg);
+								background-repeat: no-repeat;
+								background-position: 8px 50%, right 10px top 50%;
+								background-size: 28px 28px, 6px 12px;
+							}
+						}
+						&#line {
+							a {
+								background-image: url(#{$path}ico_line01.png), url(#{$path}ico_arrow01_black.svg);
+								background-repeat: no-repeat;
+								background-repeat: no-repeat;
+								background-position: 8px 50%, right 10px top 50%;
+								background-size: 28px 28px, 6px 12px;
+							}
+						}
+					}
+				}
+			}//> li:nth-of-type(2)
+
+			/* Link common visible */
+			& > li.visible:nth-of-type(2) {
+				height: auto;
+				/* fade slide */
+				transform: none;
+
+				> ul {
+					> li {
+						& > a {
+						}
+					}//& > li
+				}//& > ul
+			}//& > li.visible:nth-of-type(2)
+		}//ul
+	}//#gnavi
+}

@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+// _cmn_breadcrumb.scss
+
+/* ==========================================================
+!Breadcrumb
+========================================================== */
+#breadcrumb {
+	overflow: hidden;
+	width: 100%;
+	padding: 0 2% 0 2%;
+
+	ol {
+		max-width: $wmax;
+		margin: 0 auto;
+		text-align: left;
+
+		li {
+			display: inline-block;
+			white-space: nowrap;
+
+			&:nth-child(n+2):before {
+				margin: 0 5px 0 0;
+				content: "/";
+
+				@include fz(1.2);
+			}
+			a {
+				color: $c_blue;
+				white-space: nowrap;
+
+				@include fz(1.2);
+			}
+			span {
+				white-space: nowrap;
+
+				@include fz(1.2);
+			}
+		}
+	}
+}
+
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+/* 1200px以上（大きめPC） */
+@include pc-large {
+}

@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+// _cmn_text_link.scss
+
+/* ==========================================================
+!Text Link
+========================================================== */
+.txtlink_basic01 {
+	li {
+		a {
+			span {
+				/* WCAG 2.0 C7 */
+				overflow: hidden;
+				position: absolute;
+				top: -10px;
+				width: 1px;
+				height: 1px;
+			}
+			&:hover {
+			}
+		}
+	}
+}

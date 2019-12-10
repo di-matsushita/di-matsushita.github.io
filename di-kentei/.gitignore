@@ -1,0 +1,6 @@
+.git
+map/
+node_modules/
+temporary/
+package-lock.json
+sftp-config.json

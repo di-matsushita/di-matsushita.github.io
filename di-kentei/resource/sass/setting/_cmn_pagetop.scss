@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// _cmn_pagetop.scss
+
+/* ==========================================================
+!Pagetop
+========================================================== */
+.pageTop {
+}
+/* fixed
+------------------------------------ */
+.pagetop_fixed {
+	display: none;
+	position: relative;
+
+	p {
+		display: block;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		z-index: 9999;
+		width: 8.928%;
+		cursor: pointer;
+	}
+}
+
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+/* 1200px以上（大きめPC） */
+@include pc-large {
+}

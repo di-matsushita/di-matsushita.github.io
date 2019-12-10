@@ -1,0 +1,381 @@
+@charset "utf-8";
+/*
+ * cmn_layout.css
+ */
+
+// Setting
+@import "setting/variable";
+// Mixin
+@import "setting/mixin";
+
+/* ==========================================================
+!HTML5 elements
+========================================================== */
+header,
+footer,
+nav,
+main,
+section,
+aside,
+article {
+	display: block;
+}
+figure,
+figcaption {
+	margin: 0;
+	padding: 0;
+}
+/* ==========================================================
+!Reseting
+========================================================== */
+/* 全ての要素のbox-sizingをデフォルトでborder-boxにする */
+:root {
+	box-sizing: border-box;
+}
+*,
+::before,
+::after {
+	border-width: 0;
+	border-style: solid;
+	box-sizing: inherit;
+}
+html {
+	font-size: 62.5%;
+}
+body {
+	color: $text_color;
+	font-family: "ヒラギノ角ゴシック", "YuGothic", "游ゴシック体", "Yu Gothic", "游ゴシック", "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", "MS PGothic", Arial, Helvetica, Verdana, sans-serif;
+	font-size: 16px;
+	font-size: 1.6em;
+	font-feature-settings: "palt";
+	letter-spacing: 0.07em;
+	line-height: 1.5;
+	text-size-adjust: none;
+	background: #ffffff none;
+
+	overflow-scrolling: touch;
+}
+/* Hack for Safari 7.1-8.0 */
+_::-webkit-full-page-media,
+_:future,
+:root body {
+	font-feature-settings: "pkna";
+}
+
+/* 480px以上（大きめSP） */
+@include sp-large {
+	body {
+		@include fz(2.0);
+	}
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+	body {
+		@include fz(2.4);
+	}
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+	body {
+		@include fz(3.0);
+	}
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+	body {
+		@include fz(3.2);
+	}
+}
+
+body,
+div,
+pre,
+p,
+blockquote,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+fieldset,
+th,
+td {
+	margin: 0;
+	padding: 0;
+}
+input,
+textarea {
+	margin: 0;
+	font-size: 100%;
+}
+label {
+	cursor: pointer;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	font-size: 100%;
+}
+fieldset,
+img {
+	border: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+th,
+var {
+	font-weight: normal;
+	font-style: normal;
+}
+ol,
+ul {
+	list-style: none;
+}
+caption,
+th {
+	text-align: left;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+q:after,
+q:before {
+	content: "";
+}
+a,
+input {
+	/* outline: none; */
+}
+abbr,
+acronym {
+	border: 0;
+}
+/* ==========================================================
+!Clearfix
+========================================================== */
+@include clearfix;
+/* ==========================================================
+!Layout
+========================================================== */
+html {
+	overflow-y: scroll;
+}
+body {
+	text-align: center;
+}
+@media print {
+	html,
+	html body {
+		*zoom: 0.65;
+	}
+}
+/* ==========================================================
+!Wrapper
+========================================================== */
+#wrapper {
+	margin: 0 auto;
+	text-align: center;
+}
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+/* 1200px以上（大きめPC） */
+@include pc-large {
+}
+// ==========================================================
+// Header
+// ==========================================================
+@import "setting/cmn_header";
+// ==========================================================
+// Header_Fixed
+// ==========================================================
+@import "setting/cmn_headertop_fixed";
+// ==========================================================
+// Gnavi
+// ==========================================================
+@import "setting/cmn_gnavi";
+// ==========================================================
+// Lnavi
+// ==========================================================
+@import "setting/cmn_lnavi";
+// ==========================================================
+// Breadcrumb
+// ==========================================================
+@import "setting/cmn_breadcrumb";
+// ==========================================================
+// !Mainimg
+// ==========================================================
+@import "setting/cmn_mainimg";
+/* ==========================================================
+!Contents
+========================================================== */
+#contents {
+	margin: 0 auto;
+	text-align: center;
+}
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+/* 1200px以上（大きめPC） */
+@include pc-large {
+}
+// ==========================================================
+// Section Common
+// ==========================================================
+@import "setting/cmn_section_common";
+// ==========================================================
+// Pagetop
+// ==========================================================
+@import "setting/cmn_pagetop";
+// ==========================================================
+// Footer
+// ==========================================================
+@import "setting/cmn_footer";
+// ==========================================================
+// H(n)eading
+// ==========================================================
+@import "setting/cmn_heading";
+// ==========================================================
+// Listing
+// ==========================================================
+@import "setting/cmn_listing";
+// ==========================================================
+// Table
+// ==========================================================
+@import "setting/cmn_table";
+// ==========================================================
+// Text
+// ==========================================================
+@import "setting/cmn_text";
+// ==========================================================
+// Text Link
+// ==========================================================
+@import "setting/cmn_text_link";
+// ==========================================================
+// Button
+// ==========================================================
+@import "setting/cmn_button";
+// ==========================================================
+// pagenation
+// ==========================================================
+@import "setting/cmn_pagenation";
+// ==========================================================
+// CV Area
+// ==========================================================
+@import "setting/cmn_cvarea";
+/* ==========================================================
+!Introduction
+========================================================== */
+.introduction {
+}
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+/* 1200px以上（大きめPC） */
+@include pc-large {
+}
+/* ==========================================================
+!Hoge
+========================================================== */
+.hoge {
+}
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+/* 1200px以上（大きめPC） */
+@include pc-large {
+}

@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+// _cmn_section_common.scss
+
+/* ==========================================================
+!Section Common
+========================================================== */
+.outer {
+	margin: 0 auto;
+	text-align: center;
+}
+	/* Android */
+	.outer p,
+	.outer li,
+	.outer dt,
+	.outer dd,
+	.outer figcaption {
+		background: url(../img/img_android01.png);
+	}
+
+.inner {
+	padding: 0 2% 0 2%; /* SPで左右に余白を空ける */
+	text-align: left;
+}
+
+/* 480px以上（大きめSP） */
+@include sp-large {
+}
+
+/* 640px以上（ファブレット） */
+@include phab {
+}
+
+/* 768px以上（タブレット） */
+@include tab {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@include tab-large {
+	.outer {
+		max-width: $wmax;
+		margin: 0 auto;
+		text-align: left;
+	}
+}
+
+/* 1024px以上（基本のPC） */
+@include pc {
+}
+
+/* 1200px以上（大きめPC） */
+@include pc-large {
+}

@@ -1,0 +1,277 @@
+@charset "utf-8";
+
+// _mixin.scss
+
+// ==========================================================
+// clearfix（1と2の記述順を逆にするとエラー）
+// ==========================================================
+// 1)プレースホルダセレクタを作ってextendする @extend %clear; を記述でフロート解除＆プレースホルダーセレクタでまとめ
+// グローバルで使用するもの　メディアクエリー内で使用する方法はメディアクエリー部分参照
+@mixin clear {
+	&:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+}
+%clear {
+	@include clear;
+}
+
+// 2)ミックスインを作って各スタイルにincludeする @include clearfix; を記述でフロート解除
+@mixin clearfix {
+	.clearfix {
+		&:after {
+			display: block;
+			clear: both;
+			content: "";
+		}
+	}
+}
+
+// ==========================================================
+// MediaQuery
+// ==========================================================
+// 1)ミックスインを作って各スタイルにincludeする @include hoge{}; を記述でブレイクポイントの範囲を定義
+// ミックスインの中で@extend: clear;を使用できるように各メディアクエリ内で再定義（呼び出し名を個々に定義しているので注意）
+//
+// ブレイクポイントを定義（2017年4月現在）
+// ［iPad］            横：768px　縦：1024px
+// ［iPhone 7/6 Plus］ 横：480px　縦：736px
+// ［iPhone 7/6］      横：375px　縦：667px
+// ［iPhone 5/SE］     横：320px　縦：568px
+// ［iPhone 4（以下）］ 横：320px　縦：480px
+
+$breakPoint0: 375px; //SP
+$breakPoint1: 480px; //大きめSP
+$breakPoint2: 640px; //ファブレット
+$breakPoint3: 768px; //タブレット
+$breakPoint4: 960px; //大きめタブレット 横位置とか
+$breakPoint5: 1024px; //基本のPC
+$breakPoint6: 1200px; //大きめPC
+$breakPoint7: 1400px; //大きいPC
+
+//375px以上（SP）
+@mixin sp {
+	@media only screen and (min-width: $breakPoint0),print {
+		%clear_sp {
+			@include clear;
+		}
+		@content;
+	}
+}
+
+//480px以上（大きめSP）
+@mixin sp-large {
+	@media only screen and (min-width: $breakPoint1),print {
+		%clear_sp-large {
+			@include clear;
+		}
+		@content;
+	}
+}
+
+//640px以上（ファブレット）
+@mixin phab {
+	@media only screen and (min-width: $breakPoint2),print {
+		%clear_phab {
+			@include clear;
+		}
+
+		@content;
+	}
+}
+
+//768px以上（タブレット）
+@mixin tab {
+	@media only screen and (min-width: $breakPoint3),print {
+		%clear_tab {
+			@include clear;
+		}
+		@content;
+	}
+}
+
+//960px以上（大きめタブレット 横位置とか）
+@mixin tab-large {
+	@media only screen and (min-width: $breakPoint4),print {
+		%clear_tab-large {
+			@include clear;
+		}
+		@content;
+	}
+}
+
+//1024px以上（基本のPC）
+@mixin pc {
+	@media only screen and (min-width: $breakPoint5),print {
+		%clear_pc {
+			@include clear;
+		}
+		@content;
+	}
+}
+
+//1200px以上（大きめPC）
+@mixin pc-large {
+	@media only screen and (min-width: $breakPoint6),print {
+		%clear_pc-large {
+			@include clear;
+		}
+		@content;
+	}
+}
+
+//1400px以上（大きいPC）
+@mixin pc-large {
+	@media only screen and (min-width: $breakPoint7),print {
+		%clear_pc-large {
+			@include clear;
+		}
+		@content;
+	}
+}
+
+// ==========================================================
+// フォントサイズ
+// ==========================================================
+// 1)ミックスインを作って各スタイルにincludeする @include fz(1.6); を記述でフォントサイズを定義
+// ミックスインで定義したスタイルが各スタイルに単純に挿入される
+@mixin fz($size) {
+	font-size: ($size*10) + px;
+	font-size: $size + rem;
+}
+
+// 2)ミックスインを作って各スタイルにincludeする @include fz_vw(16, 768); を記述でフォントサイズを定義
+// ミックスインで定義したスタイルが各スタイルに単純に挿入される
+// 16pxを幅768pxで表示したときのフォントサイズをvwで指定
+@mixin fz_vw($size, $width) {
+	font-size: ($size / $width * 100) + vw;
+}
+
+// ==========================================================
+// スライダーのボタン基本設定
+// ==========================================================
+// 1)ミックスインを作って各スタイルにincludeする @include slider(width, height, margin, background, slick-prev:left, slick-next:right); を記述でスライダーの設定
+// 記述方法：@include slider(45px, 45px, -22px 0 0 0, $c_black50 none, 0, 0);
+@mixin slider($width: 45px, $height: 45px, $margin: -22px 0 0 0, $background: $c_black50 none, $prevL: 0, $nextR: 0) {
+	/* Prev Next Button */
+	.slick-arrow {
+		display: block;
+		overflow: hidden;
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+		width: $width;
+		height: $height;
+		margin: $margin;
+		padding: 0;
+		border: 0;
+		color: transparent;
+		background: $background;
+	}
+	.slick-prev,
+	.slick-next {
+		position: absolute;
+		cursor: pointer;
+	}
+	.slick-prev {
+		left: $prevL;
+	}
+	.slick-next {
+		right: $nextR;
+	}
+	@content;
+}
+
+// ==========================================================
+// memo
+// ==========================================================
+//
+// 1)プレースホルダセレクタを作ってextendする @extend %clear; を記述でフロート解除＆プレースホルダーセレクタでまとめ
+// プレースホルダセレクタで定義したスタイルを使っているセレクタがまとまって定義される
+// #content {
+// 	@extend %clear;
+// 	main {
+// 	}
+// 	aside {
+// 	}
+// }
+// .ul_basic01 {
+// 	ul {
+// 		@extend %clear;
+// 		li {
+// 		}
+// 	}
+// }
+// .dl_basic01 {
+// 	dl {
+// 		@extend %clear;
+// 		dt {
+// 		}
+// 		dd {
+// 		}
+// 	}
+// }
+//
+// ↓
+//
+// #content,
+// .ul_basic01 ul,
+// .dl_basic01 dl {
+// 	content:"";
+// 	clear:both;
+// 	display:block;
+// }
+// ～略～
+//
+// ==================================================
+//
+// 2)ミックスインを作って各スタイルにincludeする @include clearfix; を記述でフロート解除
+// ミックスインで定義したスタイルが各スタイルに単純に挿入される
+// #content {
+// 	@include clearfix;
+// 	main {
+// 	}
+// 	aside {
+// 	}
+// }
+// .ul_basic01 {
+// 	ul {
+// 		@include clearfix;;
+// 		li {
+// 		}
+// 	}
+// }
+// .dl_basic01 {
+// 	dl {
+// 		@include clearfix;;
+// 		dt {
+// 		}
+// 		dd {
+// 		}
+// 	}
+// }
+//
+// ↓
+//
+// #content {
+// 	content:"";
+// 	clear:both;
+// 	display:block;
+// }
+// ～略～
+// .ul_basic01 ul {
+// 	content:"";
+// 	clear:both;
+// 	display:block;
+// }
+// ～略～
+// .dl_basic01 dl {
+// 	content:"";
+// 	clear:both;
+// 	display:block;
+// }
+// ～略～
+//
+// ==================================================
