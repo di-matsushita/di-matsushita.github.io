@@ -8,16 +8,33 @@ jQuery(document).ready(function($) {
 ========================================================== */
 /* 関数の読み込み
 ------------------------------------ */
-	rollover();
+	// rollover();
 	pageTop();
 	pageTopFixed();
 	pageScroll();
-	Accordion();
-	tabMenu();
+	// Accordion();
+	// tabMenu();
 
 /* ==========================================================
 !外部JS(プラグイン)の個別記述はここに記述する
 ========================================================== */
+/* webfont
+------------------------------------ */
+window.WebFontConfig = {
+    google: { families: ['Oswald:700','Noto+Sans+JP:400,500,700&subset=japanese'] },
+    active: function() {
+        sessionStorage.fonts = true;
+    }
+};
+(function() {
+    var wf = document.createElement('script');
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+})();
+
 /* スクロールエフェクト
 ------------------------------------ */
 if(window.ScrollEffect){
@@ -228,41 +245,6 @@ if(window.ScrollEffect){
 });
 
 /* ==========================================================
-!rollover
-========================================================== */
-var rollover = function(){
-	var suffix = { normal : '_no.', over   : '_on.'};
-	$('a.over, img.over, input.over').each(function(){
-		var a = null;
-		var img = null;
-
-		var elem = $(this).get(0);
-		if( elem.nodeName.toLowerCase() == 'a' ){
-			a = $(this);
-			img = $('img',this);
-		}else if( elem.nodeName.toLowerCase() == 'img' || elem.nodeName.toLowerCase() == 'input' ){
-			img = $(this);
-		}
-
-		var src_no = img.attr('src');
-		var src_on = src_no.replace(suffix.normal, suffix.over);
-
-		if( elem.nodeName.toLowerCase() == 'a' ){
-			a.bind("mouseover focus",function(){ img.attr('src',src_on); })
-			 .bind("mouseout blur",  function(){ img.attr('src',src_no); });
-		}else if( elem.nodeName.toLowerCase() == 'img' ){
-			img.bind("mouseover",function(){ img.attr('src',src_on); })
-			   .bind("mouseout", function(){ img.attr('src',src_no); });
-		}else if( elem.nodeName.toLowerCase() == 'input' ){
-			img.bind("mouseover focus",function(){ img.attr('src',src_on); })
-			   .bind("mouseout blur",  function(){ img.attr('src',src_no); });
-		}
-
-		var cacheimg = document.createElement('img');
-		cacheimg.src = src_on;
-	});
-};
-/* ==========================================================
 !pageTop
 ========================================================== */
 var pageTop = function(){
@@ -314,22 +296,3 @@ var pageScroll = function(){
 		}, 500);
 	});
 };
-/* ==========================================================
-!Accordion
-========================================================== */
-var Accordion = (function(){
-	var accordion01 = $(".accordion dt");
-	accordion01.on("click", function() {
-	$(this).next().slideToggle();
-	});
-});
-/* ==========================================================
-!tab
-========================================================== */
-var tabMenu = (function(){
-	var tabLink = $("#tab_link li a");
-	tabLink.on("click", function() {
-		$("#tab_contents > div").hide();
-		$($(this).attr("href")).fadeToggle();
-	});
-});
