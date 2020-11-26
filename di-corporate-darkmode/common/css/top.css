@@ -1444,6 +1444,7 @@ a[target="_blank"].pdf p:after,
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
+	/* common */
 	body,
 	#header,
 	#gnavi,
@@ -1451,12 +1452,59 @@ a[target="_blank"].pdf p:after,
 		background-color: #333333;
 		color: #ffffff;
 	}
-	a {
+	a,
+	.link_basic01 p {
 		color: #ffffff;
 	}
 	a:hover {
 		color: #a8d9ff;
 	}
+	.btn_basic01 a,
+	.btn_basic01 button {
+		border-color: #1498ff;
+		background: #3a4750;
+		color: #1498ff;
+	}
+	.btn_basic01 a:hover,
+	.btn_basic01 button:hover {
+		background: #1498ff;
+	}
+	.btn_basic01 a p:after,
+	.btn_basic01 button p:after {
+		background: transparent;
+		color: #1498ff;
+	}
+	.btn_basic01 a:hover p:after,
+	.btn_basic01 button:hover p:after {
+		background: transparent;
+		color: #ffffff;
+	}
+	
+	#gnavi .menu_trigger .menu_trigger_line:before,
+	#gnavi .menu_trigger .menu_trigger_line span,
+	#gnavi .menu_trigger .menu_trigger_line:after,
+	#gnavi .menu_trigger.active .menu_trigger_line:before,
+	#gnavi .menu_trigger.active .menu_trigger_line:after {
+		background: #ffffff;
+		color: #ffffff;
+	}
+	#gnavi .menu_trigger.active .menu_trigger_line span {
+		color: #ffffff;
+	}
+	#gnavi > ul > li:nth-of-type(2) ul:nth-of-type(2) li a:before {
+		color: #ffffff;
+	}
+	#gnavi ul li:nth-of-type(2) ul li {
+		border-color: #616161;
+	}
+	@media screen and (min-width: 1100px){
+		#gnavi > ul > li:nth-of-type(2) ul:nth-of-type(2) li a.fa-facebook:before,
+		#gnavi > ul > li:nth-of-type(2) ul:nth-of-type(2) li a.fa-twitter:before {
+			color: #ffffff;
+		}
+	}
+
+	/** TOPpage **/
 	#service,
 	#news {
 		background-color: #444444;
@@ -1464,5 +1512,15 @@ a[target="_blank"].pdf p:after,
 	}
 	#service ul li a {
 		color: #ffffff;
+	}
+	#service ul li:hover section {
+		color: #a8d9ff;
+	}
+	#service ul li:hover section > .link_basic01 p,
+	#service ul li:hover section > .link_basic01 p:after {
+		color: #a8d9ff;
+	}
+	#news ul li a:hover {
+		color: #a8d9ff;
 	}
 }
