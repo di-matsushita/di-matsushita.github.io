@@ -1442,4 +1442,27 @@ a[target="_blank"].pdf p:after,
 	}
 }
 
-/*# sourceMappingURL=../../../map/top.css.map */
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+	body,
+	#header,
+	#gnavi,
+	#gnavi ul li:nth-of-type(2) ul {
+		background-color: #333333;
+		color: #ffffff;
+	}
+	a {
+		color: #ffffff;
+	}
+	a:hover {
+		color: #a8d9ff;
+	}
+	#service,
+	#news {
+		background-color: #444444;
+		color: #ffffff;
+	}
+	#service ul li a {
+		color: #ffffff;
+	}
+}
