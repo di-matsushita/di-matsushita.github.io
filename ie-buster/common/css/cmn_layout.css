@@ -1,0 +1,1507 @@
+@charset "utf-8";
+/*
+ * cmn_layout.css
+ */
+
+/* ==========================================================
+!HTML5 elements
+========================================================== */
+header,
+footer,
+nav,
+main,
+section,
+aside,
+article {
+	display: block;
+}
+figure,
+figcaption {
+	margin: 0;
+	padding: 0;
+}
+/* ==========================================================
+!Reseting
+========================================================== */
+/* 全ての要素のbox-sizingをデフォルトでborder-boxにする */
+:root {
+	box-sizing: border-box;
+}
+*,
+::before,
+::after {
+	border-width: 0;
+	border-style: solid;
+	box-sizing: inherit;
+}
+html { font-size: 62.5%;}
+body {
+	color: #000000;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+	font-size: 16px;
+	font-size: 1.6em;
+	font-feature-settings: "palt";
+	letter-spacing: 0.07em;
+	-webkit-text-size-adjust: none;
+	line-height: 1.8;
+	text-size-adjust: none;
+	background: #ffffff none;
+	overflow-scrolling: touch;
+}
+
+/* Hack for Safari 7.1-8.0 */
+_::-webkit-full-page-media,
+_:future,
+:root body {
+	font-feature-settings: "pkna";
+}
+
+body, div, pre, p, blockquote, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, th, td
+{ margin: 0; padding: 0;}
+input, textarea
+{ margin: 0; font-size: 100%;}
+label
+{ cursor: pointer;}
+table
+{ border-collapse: collapse; border-spacing: 0; font-size: 100%;}
+fieldset, img
+{ border: 0;}
+img
+{ max-width: 100%; height: auto; vertical-align: middle;}
+address, caption, cite, code, dfn, em, th, var
+{ font-style: normal; font-weight: normal;}
+ol, ul
+{ list-style: none;}
+caption, th
+{ text-align: left;}
+h1, h2, h3, h4, h5, h6
+{ font-size: 100%; font-weight: normal;}
+q:after, q:before
+{ content:'';}
+a, input
+{ /* outline: none; */ }
+abbr, acronym
+{ border: 0;}
+/* ==========================================================
+!Clearfix
+========================================================== */
+.clearfix:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+/* ==========================================================
+!Layout
+========================================================== */
+html { overflow-y: scroll;}
+body { text-align: center;}
+@media print {
+	html,
+	html body { *zoom: 0.65;}
+}
+/* ==========================================================
+!Wrapper
+========================================================== */
+#wrapper {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Header
+========================================================== */
+#header {
+	margin: 0 0 24px 0;
+}
+	#header .inner01 {
+		max-width: 960px;
+		margin: 0 auto;
+		text-align: left;
+	}
+		#hd_logo {
+			font-weight: bold;
+			font-size: 150%;
+		}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Gnavi
+========================================================== */
+#gnavi {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	position: relative;
+	top: 0;
+	right: 1px;
+	width: 60px;
+	height: 60px;
+	background: trasnparent none;
+}
+
+	#gnavi:hover,
+	#gnavi:active,
+	#gnavi:focus {
+		cursor: pointer;
+		outline: 1px dotted #ffffff;
+	}
+
+	#gnavi.on,
+	#gnavi.on:hover,
+	#gnavi.on:active,
+	#gnavi.on:focus {
+		background: trasnparent none;
+		cursor: pointer;
+		outline: 1px dotted #ffffff;
+	}
+
+	/* Menu
+	------------------------------------ */
+	#gnavi > ul {
+	}
+
+		/* Menu Line
+		------------------------------------ */
+		#gnavi > ul .menu_trigger {
+			position: relative;
+			z-index: 1000;
+			width: 31px;
+			height: 36px;
+		}
+
+			/* Menu Line top */
+			#gnavi > ul .menu_trigger:before {
+				display: block;
+				-ms-flex-item-align: center;
+				    align-self: center;
+				position: absolute;
+				top: 2px; /* 線の位置 */
+				left: 0;
+				width: 100%;
+				height: 2px;
+				text-align: center;
+				content: "";
+				background-color: #ffffff; /* 線の色 */
+				-webkit-transition-property: -webkit-transform;
+				transition-property: -webkit-transform;
+				-o-transition-property: transform;
+				transition-property: transform;
+				transition-property: transform, -webkit-transform;
+				-webkit-transition-duration: 0.15s;
+				     -o-transition-duration: 0.15s;
+				        transition-duration: 0.15s;
+				-webkit-transition-timing-function: ease-in-out;
+				     -o-transition-timing-function: ease-in-out;
+				        transition-timing-function: ease-in-out;
+			}
+
+			/* Menu Line middle */
+			#gnavi > ul .menu_trigger .menu_trigger_line {
+				display: block;
+				-ms-flex-item-align: center;
+				    align-self: center;
+				position: absolute;
+				top: 10px; /* 線の位置 */
+				left: 0;
+				width: 100%;
+				height: 2px;
+				color: #ffffff;
+				font-size: 10px;
+				line-height: 42px; /* 文字の位置 */
+				text-align: center;
+				background-color: #ffffff; /* 線の色 */
+				-webkit-transition: all 0.4s;
+					 -o-transition: all 0.4s;
+						transition: all 0.4s;
+			}
+
+			/* Menu Line bottom */
+			#gnavi > ul .menu_trigger:after {
+				display: block;
+				-ms-flex-item-align: center;
+				    align-self: center;
+				position: absolute;
+				top: 18px; /* 線の位置 */
+				left: 0;
+				width: 100%;
+				height: 2px;
+				text-align: center;
+				content: "";
+				background-color: #ffffff; /* 線の色 */
+				-webkit-transition-property: -webkit-transform;
+				transition-property: -webkit-transform;
+				-o-transition-property: transform;
+				transition-property: transform;
+				transition-property: transform, -webkit-transform;
+				-webkit-transition-duration: 0.15s;
+				     -o-transition-duration: 0.15s;
+				        transition-duration: 0.15s;
+				-webkit-transition-timing-function: ease-in-out;
+				     -o-transition-timing-function: ease-in-out;
+				        transition-timing-function: ease-in-out;
+			}
+
+			/* Menu Close Line
+			------------------------------------ */
+			/* Menu Close Line top */
+			#gnavi > ul .menu_trigger.active:before {
+				background-color: #ffffff; /* 線の色 */
+				-webkit-transform: translateY(8px) rotate(-45deg);
+				    -ms-transform: translateY(8px) rotate(-45deg);
+				        transform: translateY(8px) rotate(-45deg);
+			}
+
+			/* Menu Close Line middle */
+			#gnavi > ul .menu_trigger.active .menu_trigger_line {
+				color: #ffffff; /* 文字の色 */
+				background-color: transparent; /* 線の色 無し */
+			}
+
+			/* Menu Close Line bottom */
+			#gnavi > ul .menu_trigger.active:after {
+				background-color: #ffffff; /* 線の色 */
+				-webkit-transform: translateY(-8px) rotate(45deg);
+				    -ms-transform: translateY(-8px) rotate(45deg);
+				        transform: translateY(-8px) rotate(45deg);
+			}
+
+		/* Menu Link Common
+		------------------------------------ */
+		/* Link common default */
+		#gnavi > ul > li:nth-of-type(2) {
+			display: block;
+			overflow: hidden;
+			visibility: hidden; /* 変更前 */
+			opacity: 0; /* 変更前 */
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 999;
+			width: 100%;
+			height: 100%; /* 変更前 */
+			padding: 0 6px 0 6px;
+			-webkit-box-sizing: border-box;
+			        box-sizing: border-box;
+			-webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+			        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+
+			/* fade slide */
+			/* 変更前 */
+			-webkit-transform: translateY(60px);
+			    -ms-transform: translateY(60px);
+			        transform: translateY(60px);
+
+			/* transitionを適用するCSSプロパティ名を指定 */
+			-webkit-transition-property: overflow, visibility, height, opacity, -webkit-transform;
+			transition-property: overflow, visibility, height, opacity, -webkit-transform;
+			-o-transition-property: overflow, visibility, height, opacity, transform;
+			transition-property: overflow, visibility, height, opacity, transform;
+			transition-property: overflow, visibility, height, opacity, transform, -webkit-transform;
+
+			/* 0.3秒かけて */
+			-webkit-transition-duration: 0.3s;
+			     -o-transition-duration: 0.3s;
+			        transition-duration: 0.3s;
+
+			/* 変化の進行割合をイージングで指定 */
+			-webkit-transition-timing-function: ease-out;
+			     -o-transition-timing-function: ease-out;
+			        transition-timing-function: ease-out;
+		}
+
+			/* gnavi default */
+			#gnavi > ul > li:nth-of-type(2) > ul {
+				padding: 90px 8px 8px 8px;
+				background: rgba(133, 220, 227, 0.9) none;
+			}
+
+				#gnavi > ul > li:nth-of-type(2) > ul > li {
+					margin: 0 0 8px 0;
+					border-width: 1px 1px 1px 1px;
+					border-style: solid;
+					border-color: #ffffff;
+					text-align: center;
+				}
+
+					#gnavi > ul > li:nth-of-type(2) > ul > li > a {
+						display: block;
+						padding: 16px 16px 16px 16px;
+						text-decoration: none;
+						background: rgba(255, 255, 255, 0.3) url(../img/ico_arrow01_white.svg) no-repeat right 10px top 50%;
+						background-size: 12px 24px;
+
+						/* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+						-webkit-transition-property: background-color;
+						-o-transition-property: background-color;
+						transition-property: background-color;
+
+						/* fade */
+						/* 0.1秒かけて */
+						-webkit-transition-duration: 0.1s;
+						     -o-transition-duration: 0.1s;
+						        transition-duration: 0.1s;
+					}
+
+						#gnavi > ul > li:nth-of-type(2) > ul > li > a:hover,
+						#gnavi > ul > li:nth-of-type(2) > ul > li > a:focus {
+							background: rgba(255, 255, 255, 0.5) url(../img/ico_arrow01_white.svg) no-repeat right 10px top 50%; /* 変更後 */
+						}
+
+							#gnavi > ul > li:nth-of-type(2) > ul > li > a span {
+								display: block;
+								font-size: 12px;
+								font-size: 1.2rem;
+							}
+
+			/* others link default */
+			#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) {
+				padding: 8px 8px 8px 8px;
+			}
+
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li {
+					text-align: left;
+				}
+
+					#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li > a {
+						padding: 16px 16px 16px 40px;
+						background-color: rgba(255, 255, 255, 0.3);
+
+						/* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+						-webkit-transition-property: background-color;
+						-o-transition-property: background-color;
+						transition-property: background-color;
+
+						/* fade */
+						/* 0.1秒かけて */
+						-webkit-transition-duration: 0.1s;
+						     -o-transition-duration: 0.1s;
+						        transition-duration: 0.1s;
+					}
+
+						#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li > a:hover,
+						#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li > a:focus {
+							background-color: rgba(255, 255, 255, 0.5); /* 変更後 */
+						}
+
+					#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li#mail a {
+						background-image: url(../img/ico_free01.png), url(../img/ico_arrow01_white.svg);
+						background-repeat: no-repeat;
+						background-position: 8px 50%, right 10px top 50%;
+						background-size: 28px 28px, 12px 24px;
+					}
+
+					#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li#line a {
+						background-image: url(../img/ico_line01.png), url(../img/ico_arrow01_white.svg);
+						background-repeat: no-repeat;
+						background-repeat: no-repeat;
+						background-position: 8px 50%, right 10px top 50%;
+						background-size: 28px 28px, 12px 24px;
+					}
+
+		/* Link common visible */
+		#gnavi > ul > li.visible:nth-of-type(2) {
+			overflow: auto; /* 変更後 */
+			overflow-y: scroll; /* スマホ制御 */
+			visibility: visible; /* 変更後 */
+			opacity: 1; /* 変更後 */
+			height: 100%; /* 変更後 */
+			/* fade slide */
+			/* 変更後 */
+			-webkit-transform: translateY(0);
+			    -ms-transform: translateY(0);
+			        transform: translateY(0);
+
+			/* transitionを適用するCSSプロパティ名を指定 */
+			-webkit-transition-property: overflow, visibility, height, opacity, -webkit-transform;
+			transition-property: overflow, visibility, height, opacity, -webkit-transform;
+			-o-transition-property: overflow, visibility, height, opacity, transform;
+			transition-property: overflow, visibility, height, opacity, transform;
+			transition-property: overflow, visibility, height, opacity, transform, -webkit-transform;
+
+			/* 0.3秒かけて */
+			-webkit-transition-duration: 0.3s;
+			     -o-transition-duration: 0.3s;
+			        transition-duration: 0.3s;
+
+			/* 変化の進行割合をイージングで指定 */
+			-webkit-transition-timing-function: ease-out;
+			     -o-transition-timing-function: ease-out;
+			        transition-timing-function: ease-out;
+		}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px) {
+	#gnavi {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		-webkit-box-align: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		width: 100%;
+		height: 80px;
+	}
+	#gnavi:hover,
+	#gnavi:active,
+	#gnavi:focus {
+		outline: none;
+	}
+	#gnavi.on,
+	#gnavi.on:hover,
+	#gnavi.on:active,
+	#gnavi.on:focus {
+		outline: none;
+	}
+
+		/* Menu
+		------------------------------------ */
+		#gnavi > ul {
+			width: 100%;
+		}
+			#gnavi > ul .menu_trigger {
+				display: none;
+			}
+
+			/* Menu Link Common
+			------------------------------------ */
+			/* Link common default */
+			#gnavi > ul > li:nth-of-type(2) {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
+				overflow: hidden;
+				visibility: visible;
+				opacity: 1;
+				position: static;
+				height: 60px;
+				padding: 0 10px 0 6px;
+				-webkit-box-shadow: none;
+				        box-shadow: none;
+				/* fade slide */
+				-webkit-transform: none;
+				    -ms-transform: none;
+				        transform: none;
+			}
+
+			/* gnavi default */
+			#gnavi > ul > li:nth-of-type(2) > ul {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				    -ms-flex-flow: row nowrap;
+				        flex-flow: row nowrap;
+				-webkit-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;
+				padding: 0 0 0 20px;
+				background: transparent;
+			}
+				#gnavi > ul > li:nth-of-type(2) > ul > li {
+					display: inline-block;
+					margin: 0;
+					padding: 0 16px 0 16px;
+					border-width: 0;
+					white-space: nowrap;
+				}
+					#gnavi > ul > li:nth-of-type(2) > ul > li > a {
+						display: block;
+						position: relative;
+						padding: 0 0 2px 0;
+						font-size: 15px;
+						font-size: 1.5rem;
+						background: transparent none;
+						cursor: pointer;
+
+						/* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+						-webkit-transition-property: background-color;
+						-o-transition-property: background-color;
+						transition-property: background-color;
+
+						/* fade */
+						/* 0.1秒かけて */
+						-webkit-transition-duration: 0.1s;
+						     -o-transition-duration: 0.1s;
+						        transition-duration: 0.1s;
+					}
+					#gnavi > ul > li:nth-of-type(2) > ul > li > a:hover,
+					#gnavi > ul > li:nth-of-type(2) > ul > li > a:focus {
+						background: transparent none;
+					}
+						#gnavi > ul > li:nth-of-type(2) > ul > li > a span {
+							display: block;
+							font-size: 11px;
+							font-size: 1.1rem;
+						}
+
+			/* gnavi first */
+			#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(1) {
+				-webkit-box-flex: 1;
+				    -ms-flex-positive: 1;
+				        flex-grow: 1;
+			}
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(1) > li > a:before {
+					display: block;
+					position: absolute;
+					top: -3px;
+					left: 50%;
+					width: 0;
+					height: 1px;
+					content: "";
+					background: #ffffff;
+					-webkit-transform: translate(-50%, 0);
+					    -ms-transform: translate(-50%, 0);
+					        transform: translate(-50%, 0);
+					-webkit-transition: 0.1s;
+					-o-transition: 0.1s;
+					transition: 0.1s;
+				}
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(1) > li > a:after {
+					display: block;
+					position: absolute;
+					bottom: -3px;
+					left: 50%;
+					width: 0;
+					height: 1px;
+					content: "";
+					background: #ffffff;
+					-webkit-transform: translate(-50%, 0);
+					    -ms-transform: translate(-50%, 0);
+					        transform: translate(-50%, 0);
+					-webkit-transition: 0.1s;
+					-o-transition: 0.1s;
+					transition: 0.1s;
+				}
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(1) > li > a:hover:before,
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(1) > li > a:hover:after {
+					width: 100%;
+				}
+
+			/* others link default */
+			#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) {
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				    -ms-flex-flow: row nowrap;
+				        flex-flow: row nowrap;
+				-webkit-box-pack: justify;
+				    -ms-flex-pack: justify;
+				        justify-content: space-between;
+				-webkit-box-align: end;
+				    -ms-flex-align: end;
+				        align-items: flex-end;
+				padding: 0;
+			}
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li {
+					padding: 0 0 0 12px;
+					text-align: left;
+				}
+					#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li > a {
+						position: relative;
+						padding: 8px 24px 8px 40px;
+						border-width: 1px 1px 1px 1px;
+						border-style: solid;
+						border-color: #000000;
+						background-color: transparent;
+
+						/* transitionを適用するCSSプロパティ名を指定 colorとbackground-colorが変更対象 */
+						-webkit-transition-property: background-color;
+						-o-transition-property: background-color;
+						transition-property: background-color;
+
+						/* fade */
+						/* 0.1秒かけて */
+						-webkit-transition-duration: 0.1s;
+						     -o-transition-duration: 0.1s;
+						        transition-duration: 0.1s;
+					}
+					#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li > a:hover,
+					#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li > a:focus {
+						background-color: rgba(255, 255, 255, 0.5); /* 変更後 */
+					}
+
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li#mail a {
+					background-image: url(../img/ico_free01.png), url(../img/ico_arrow01_black.svg);
+					background-repeat: no-repeat, no-repeat;
+					background-position: 8px 50%, right 10px top 50%;
+					background-size: 28px 28px, 6px 12px;
+				}
+				#gnavi > ul > li:nth-of-type(2) > ul:nth-of-type(2) > li#line a {
+					background-image: url(../img/ico_line01.png), url(../img/ico_arrow01_black.svg);
+					background-repeat: no-repeat, no-repeat;
+					background-position: 8px 50%, right 10px top 50%;
+					background-size: 28px 28px, 6px 12px;
+				}
+
+			/* Link common visible */
+			#gnavi > ul > li.visible:nth-of-type(2) {
+				height: auto;
+				/* fade slide */
+				-webkit-transform: none;
+				    -ms-transform: none;
+				        transform: none;
+			}
+}
+/* ==========================================================
+!Lnavi
+========================================================== */
+.lnavi {
+}
+	.lnavi > ul {
+	}
+		.lnavi > ul > li {
+		}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Breadcrumb
+========================================================== */
+#breadcrumb {
+	overflow: hidden;
+	width: 100%;
+	padding: 0 2% 0 2%;
+}
+	#breadcrumb ol {
+		max-width: calc(1000px);
+		margin: 0 auto;
+		text-align: left;
+	}
+		#breadcrumb ol li {
+			display: inline-block;
+			white-space: nowrap;
+		}
+		#breadcrumb ol li:nth-child(n+2):before {
+			margin: 0 5px 0 0;
+			font-size: 12px;
+			font-size: 1.2rem;
+			content: "/";
+		}
+			#breadcrumb ol li a {
+				color: #0000ff;
+				font-size: 12px;
+				font-size: 1.2rem;
+				white-space: nowrap;
+			}
+			#breadcrumb ol li span {
+				font-size: 12px;
+				font-size: 1.2rem;
+				white-space: nowrap;
+			}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+
+/* ==========================================================
+!Mainimg
+========================================================== */
+#mainimg {
+}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Contents
+========================================================== */
+#contents {
+	margin: 0 auto;
+	text-align: center;
+}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Section Common
+========================================================== */
+.outer01 p,
+.outer01 li,
+.outer01 dt,
+.outer01 dd,
+.outer01 figcaption {
+	/* Android */
+	background: url(../img/img_android01.png);
+}
+
+.inner01 {
+	padding: 0 6% 0 6%; /* SPで左右に余白を空けるため　paddingを入れて幅を$wmax相当に */
+	text-align: left;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px) {
+	.outer01 {
+		width: 100%;
+		max-width: calc(1000px);
+		margin: 0 auto;
+	}
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Pagetop
+========================================================== */
+.pageTop {
+}
+/* fixed
+------------------------------------ */
+.pagetop_fixed {
+	display: none;
+	position: relative;
+}
+	.pagetop_fixed p {
+		display: block;
+		position: fixed;
+		right: 0;
+		bottom: 0;
+		z-index: 9999;
+		width: 8.928%;
+		cursor: pointer;
+	}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Footer
+========================================================== */
+#footer {
+	background: #fafafa none;
+	margin: 50px 0 0 0;
+}
+	#ft_copyright {
+		text-align: center;
+	}
+		#ft_copyright small {
+			color: #676767;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			font-size: 1.4rem;
+		}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!H(n)eading
+========================================================== */
+.h1_basic01 {}
+	.h1_basic01 h1 {}
+.h2_basic01 {}
+	.h2_basic01 h2 {}
+.h3_basic01 {}
+	.h3_basic01 h3 {}
+.h4_basic01 {}
+	.h4_basic01 h4 {}
+.h5_basic01 {}
+	.h5_basic01 h5 {}
+.h6_basic01 {}
+	.h6_basic01 h6 {}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Listing
+========================================================== */
+.ul_basic01 {
+}
+	.ul_basic01 ul {
+	}
+		.ul_basic01 ul li {
+		}
+
+.ol_basic01 {
+}
+	.ol_basic01 ol {
+	}
+		.ol_basic01 ol li {
+		}
+
+.dl_basic01 {
+}
+	.dl_basic01 dl {
+	}
+		.dl_basic01 dl dt {
+		}
+		.dl_basic01 dl dd {
+		}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Box
+========================================================== */
+.box_basic01 {
+}
+	.box_basic01 ul {
+	}
+		.box_basic01 ul li {
+		}
+			.box_basic01 ul li dl {
+			}
+				.box_basic01 ul li dl dt {
+				}
+				.box_basic01 ul li dl dd {
+				}
+
+.box_flame01 {
+}
+	.box_flame01 ul {
+	}
+		.box_flame01 ul li {
+		}
+			.box_flame01 ul li dl {
+			}
+				.box_flame01 ul li dl dt {
+				}
+				.box_flame01 ul li dl dd {
+				}
+
+.box_paint01 {
+}
+	.box_paint01 ul {
+	}
+		.box_paint01 ul li {
+		}
+			.box_paint01 ul li dl {
+			}
+				.box_paint01 ul li dl dt {
+				}
+				.box_paint01 ul li dl dd {
+				}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Table
+========================================================== */
+.table_basic01 {
+}
+	.table_basic01 table {
+		table-layout: fixed;
+		width: 100%;
+	}
+		.table_basic01 th,
+		.table_basic01 td {
+		}
+		.table_basic01 th {
+		}
+		.table_basic01 td {
+		}
+			.table_basic01 th div,
+			.table_basic01 td div {
+			}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Text
+========================================================== */
+mark{
+}
+
+.txt_basic01 {
+}
+.txt_basic02 {
+}
+.txt_basic03 {
+}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!Text Link
+========================================================== */
+.txtlink_basic01 {
+}
+	.txtlink_basic01 li {
+	}
+		.txtlink_basic01 li a {
+		}
+			.txtlink_basic01 li a span {
+				/* WCAG 2.0 C7 */
+				overflow: hidden;
+				position: absolute;
+				top: -10px;
+				width: 1px;
+				height: 1px;
+			}
+		.txtlink_basic01 li a:hover {
+		}
+/* ==========================================================
+!Button
+========================================================== */
+/* Basic Button Style01
+------------------------------------ */
+.btn_basic01 {
+}
+	.btn_basic01 a,
+	.btn_basic01 div.
+	.btn_basic01 button {
+	}
+	.btn_basic01 a p ,
+	.btn_basic01 div p,
+	.btn_basic01 div button {
+	}
+		.btn_basic01 a p span ,
+		.btn_basic01 div p span,
+		.btn_basic01 div button span {
+			/* WCAG 2.0 C7 */
+			overflow: hidden;
+			position: absolute;
+			top: -10px;
+			width: 1px;
+			height: 1px;
+		}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!pagenation
+========================================================== */
+.pagenation01 {
+}
+	.pagenation01 ol {
+	}
+		.pagenation01 ol li {
+		}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
+/* ==========================================================
+!CV Area
+========================================================== */
+#cvarea01 {
+}
+
+/* 375px以上（SP） */
+@media only screen and (min-width: 375px), print {
+}
+
+/* 480px以上（大きめSP） */
+@media only screen and (min-width: 480px), print {
+}
+
+/* 640px以上（ファブレット） */
+@media only screen and (min-width: 640px), print {
+}
+
+/* 768px以上（タブレット） */
+@media only screen and (min-width: 768px), print {
+}
+
+/* 960px以上（大きめタブレット 横位置とか） */
+@media only screen and (min-width: 960px), print {
+}
+
+/* 1024px以上（基本のPC） */
+@media only screen and (min-width: 1024px), print {
+}
+
+/* 1200px以上（大きめPC） */
+@media only screen and (min-width: 1200px), print {
+}
+
+/* 1400px以上（大きいPC） */
+@media only screen and (min-width: 1400px), print {
+}
