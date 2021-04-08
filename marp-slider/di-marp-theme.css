@@ -1,0 +1,23 @@
+/* @theme di-marp-theme */
+
+@import 'default';
+
+
+/* section.slide-title {
+    background: #8aceec;
+} */
+/*  --base --*/
+section {
+	width: 1920px;
+	height: 1080px;
+	font-size: 40px;
+	padding: 40px;
+}
+
+footer {
+    text-align: center;
+    /* margin: 0 auto; */
+    /* background: #eee; */
+    width: 100%;
+    margin: 0;
+}
